@@ -10,7 +10,7 @@ gulpBootstrap.bindBaseTasks(gulp);
 
 ```
 
-For the moment, the source directory is expected to be `/src`.  The transpiled code (including tests) will be outputted to `/dist`. If need be, this could be configurable eventually.
+For the moment, the sources directory is expected to be `/src`.  The transpiled code (including tests) will be outputted to `/dist`. If need be, this could be configurable eventually.
 
 Make sure the `main` entry in `package.json` points to the execution entry point of the app eg:
 `"main": "dist/lib/index.js"`.  See the `dev` task description below.
