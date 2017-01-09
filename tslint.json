@@ -1,3 +1,10 @@
 {
-  "extends": "tslint:latest"
+    "extends": "tslint:recommended",
+    "rules": {
+        "interface-name": [true, "never-prefix"],
+        "semicolon": [true, "never"],
+        "linebreak-style": [true, "LF"],
+        "quotemark": [true, "single", "avoid-escape"],
+        "semicolon": [true, "always"]
+    }
 }

@@ -1,8 +1,6 @@
-import * as util from 'util';
-import * as fs from 'fs';
-
+"use strict";
+const util = require("util");
 console.log(util.format('dfdfdfdfdff'));
-
 // import bunyan from 'bunyan';
 // const packageJson = require(process.cwd() + '/package.json');
 // import _ from 'lodash';
@@ -244,3 +242,4 @@ console.log(util.format('dfdfdfdfdff'));
 // function __guard__(value, transform) {
 //   return (typeof value !== 'undefined' && value !== null) ? transform(value) : undefined;
 // }
+//# sourceMappingURL=index.js.map
