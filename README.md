@@ -15,7 +15,7 @@ For the moment, the sources directory is expected to be `/src`.  The transpiled 
 Make sure the `main` entry in `package.json` points to the execution entry point of the app eg:
 `"main": "dist/lib/index.js"`.  See the `dev` task description below.
 
-### Gulp tasks provided by the module ### 
+### Gulp tasks provided by the module
 1. `gulp lint`: runs the typescript linter
 2. `gulp clean`: clears the `/dist` directory
 3. `gulp transpile`: transpiles typescript sources to javascript to `/dist`
