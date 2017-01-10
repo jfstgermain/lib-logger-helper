@@ -1,18 +1,17 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
-    "outDir": "dist",
+    "declaration": true,
     "target": "ES6",
     "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "dist",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
     "removeComments": false,
     "noImplicitAny": false,
-    "suppressImplicitAnyIndexErrors": true,
-    "rootDirs": [
-      "src"
-    ]
+    "preserveConstEnums": true
   },
   "include": [
     "src/**/*.ts"

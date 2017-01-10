@@ -5,6 +5,10 @@
         "semicolon": [true, "never"],
         "linebreak-style": [true, "LF"],
         "quotemark": [true, "single", "avoid-escape"],
-        "semicolon": [true, "always"]
+        "semicolon": [true, "always"],
+        "only-arrow-functions": 0,
+        "ordered-imports": 0,
+        "no-string-literal": 0,
+        "no-console": 0
     }
 }
