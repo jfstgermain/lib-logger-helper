@@ -50,7 +50,7 @@ function userSerializer (user: any) {
 function reqSerializer (req: any) {
   if (_.get(req, 'connection') || _.get(req, 'headers')) {
     req = {
-      header       : req.headers,
+      headers      : req.headers,
       method       : req.method,
       url          : req.url,
     };
