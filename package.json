@@ -31,6 +31,7 @@
     "gulp": "^3.9.1",
     "lib-gulp-bootstrap": "git+ssh://git@bitbucket.org/jfstgermain/lib-gulp-bootstrap.git",
     "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0",
     "ts-node": "^2.0.0",
     "tslint": "^4.3.1",
     "typescript": "^2.1.4"

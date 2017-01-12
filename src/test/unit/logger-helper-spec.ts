@@ -1,8 +1,11 @@
 
 import loggerHelper from '../../lib/index';
+import * as path from 'path';
 import * as bunyan from 'bunyan';
+import * as sinon from 'sinon';
+import * as sinonChai from 'sinon-chai';
 
-const expect = chai.expect;
+chai.use(sinonChai);
 
 // Convenience stream used to capture logged objects
 class CapturingStream {
@@ -21,18 +24,36 @@ describe('The logger helper module', function () {
   let logger: any = null;
 
   describe('#init()', function () {
-    before(function () {
-      loggerHelper.init();
-      logger = loggerHelper.logger();
+
+    describe('using default params', function () {
+      before(function () {
+        loggerHelper.init();
+        logger = loggerHelper.logger();
+      });
+
+      it('should use the default bunyan-config\'s output stream (stdout)', function () {
+        expect(logger.streams).to.have.lengthOf(1);
+        // expect(logger.streams[0]).to.equal(process.stdout);
+      });
+
+      it('should have the default serializers registered', function () {
+        expect(logger.serializers).to.have.all.keys(['err', 'error', 'res', 'req', 'user', 'module']);
+      });
     });
 
-    it('should use the default bunyan-config\'s output stream (stdout)', function () {
-      expect(logger.streams).to.have.lengthOf(1);
-      // expect(logger.streams[0]).to.equal(process.stdout);
-    });
+    describe('using `handleUncaughtExceptions = false`', function () {
+      let spy;
 
-    it('should have the default serializers registered', function () {
-      expect(logger.serializers).to.have.all.keys(['err', 'error', 'res', 'req', 'user', 'module']);
+      before(function () {
+        spy = sinon.spy(loggerHelper.prototype, 'bindUncaughtExceptionHandler');
+        spy.withArgs(false);
+      });
+
+      it.only('should not bind the `UncaughtException` handler', function (cb) {
+        loggerHelper.init(null, false);
+        expect(spy).to.have.been.neverCalledWith();
+
+      });
     });
   });
 
@@ -123,6 +144,32 @@ describe('The logger helper module', function () {
         expect(loggedEntries[0].req.headers).to.equal(loggedObject.headers);
         expect(loggedEntries[0].req.method).to.equal(loggedObject.method);
         expect(loggedEntries[0].req.url).to.equal(loggedObject.url);
+      });
+    });
+
+    describe('#moduleSerializer()', function () {
+      it('should return the input value if the object doesn\'t contain a `filename` field', function () {
+        const loggedObject = {
+          field1: 'value1',
+          field2: 'value2',
+        };
+
+        logger.warn({ module: loggedObject });
+
+        expect(loggedEntries).to.have.length(1);
+        expect(loggedEntries[0].module).to.exist;
+        expect(loggedEntries[0].module).to.deep.equal(loggedObject);
+      });
+
+      it('should return a serialized version of the `module` object', function () {
+        logger.warn({
+          module,
+        });
+
+        expect(loggedEntries).to.have.length(1);
+        expect(loggedEntries[0].module).to.exist;
+        expect(loggedEntries[0].module).to.deep.equal(path.basename(module.filename));
+
       });
     });
   });
