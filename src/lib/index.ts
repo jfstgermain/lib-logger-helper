@@ -122,5 +122,5 @@ export default {
     module: moduleSerializer,
     req: reqSerializer,
     user: userSerializer,
-  },
+  }
 };
