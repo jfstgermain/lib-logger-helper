@@ -10,10 +10,11 @@ let uncaughtExceptionHandlerBound = false;
 let config                        = null;
 
 function bindUncaughtExceptionHandler () {
+  console.error('dfdfdfdfdfdf');
   if (!uncaughtExceptionHandlerBound) {
     uncaughtExceptionHandlerBound = true;
 
-    return process.on('uncaughtException', (err: Error) => {
+    process.on('uncaughtException', (err: Error) => {
       if (defaultLogger != null) {
         defaultLogger.error(err, '\u2622 UncaughtException \u2622');
       } else {
@@ -78,7 +79,9 @@ function init (configsPath = null, handleUncaughtExceptions = true) {
   let configs = null;
 
   if (handleUncaughtExceptions) {
-    bindUncaughtExceptionHandler();
+    // prefixing with `this` so spies can be used for testing
+    // see: http://stackoverflow.com/questions/26041079/sinon-spy-is-not-called-if-the-spied-method-is-called-indirectly
+    this.bindUncaughtExceptionHandler();
   }
 
   if (configsPath) {

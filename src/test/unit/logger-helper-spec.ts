@@ -41,27 +41,25 @@ describe('The logger helper module', function () {
       });
     });
 
-    describe('using `handleUncaughtExceptions = false`', function () {
+    describe('when passing a value to `handleUncaughtExceptions`', function () {
       let spy;
       let sandbox;
 
-      before(function () {
+      beforeEach(function () {
         sandbox = sinon.sandbox.create();
         spy = sandbox.spy(loggerHelper, 'bindUncaughtExceptionHandler');
       });
 
-      after(function () {
+      afterEach(function () {
         sandbox.restore();
       });
 
-      it('should not bind the `UncaughtException` handler', function () {
-        // spy.withArgs(false);
+      it('should not bind the `UncaughtException` handler if `false`', function () {
         loggerHelper.init(null, false);
         expect(spy).to.not.have.been.called;
       });
 
-      it('should not bind the `UncaughtException` handler', function () {
-        // spy.withArgs(true);
+      it('should bind the `UncaughtException` handler if `true`', function () {
         loggerHelper.init(null, true);
         expect(spy).to.have.been.called;
       });
@@ -72,7 +70,7 @@ describe('The logger helper module', function () {
     // it()
   });
 
-  describe.only('serializers', function () {
+  describe('serializers', function () {
     let loggedEntries = [];
 
     beforeEach(function () {
