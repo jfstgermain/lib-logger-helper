@@ -114,6 +114,7 @@ function logger () {
 export default {
   init,
   logger,
+  bindUncaughtExceptionHandler,
   serializers: {
     module: moduleSerializer,
     req: reqSerializer,

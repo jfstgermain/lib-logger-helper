@@ -43,15 +43,21 @@ describe('The logger helper module', function () {
 
     describe('using `handleUncaughtExceptions = false`', function () {
       let spy;
+      let sandbox;
 
       before(function () {
-        spy = sinon.spy(loggerHelper.prototype, 'bindUncaughtExceptionHandler');
+        sandbox = sinon.sandbox.create();
+        spy = sandbox.spy(loggerHelper, 'bindUncaughtExceptionHandler');
         spy.withArgs(false);
+      });
+
+      after(function () {
+        sandbox.restore();
       });
 
       it.only('should not bind the `UncaughtException` handler', function (cb) {
         loggerHelper.init(null, false);
-        expect(spy).to.have.been.neverCalledWith();
+        expect(spy).to.have.been.neverCalledWith(34);
 
       });
     });
