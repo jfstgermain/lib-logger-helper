@@ -48,17 +48,22 @@ describe('The logger helper module', function () {
       before(function () {
         sandbox = sinon.sandbox.create();
         spy = sandbox.spy(loggerHelper, 'bindUncaughtExceptionHandler');
-        spy.withArgs(false);
       });
 
       after(function () {
         sandbox.restore();
       });
 
-      it.only('should not bind the `UncaughtException` handler', function (cb) {
+      it('should not bind the `UncaughtException` handler', function () {
+        // spy.withArgs(false);
         loggerHelper.init(null, false);
-        expect(spy).to.have.been.neverCalledWith(34);
+        expect(spy).to.not.have.been.called;
+      });
 
+      it('should not bind the `UncaughtException` handler', function () {
+        // spy.withArgs(true);
+        loggerHelper.init(null, true);
+        expect(spy).to.have.been.called;
       });
     });
   });
