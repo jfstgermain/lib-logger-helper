@@ -10,7 +10,6 @@ let uncaughtExceptionHandlerBound = false;
 let config                        = null;
 
 function bindUncaughtExceptionHandler () {
-  console.error('dfdfdfdfdfdf');
   if (!uncaughtExceptionHandlerBound) {
     uncaughtExceptionHandlerBound = true;
 
