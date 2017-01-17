@@ -10,8 +10,7 @@
   ],
   "main": "dist/lib/index.js",
   "scripts": {
-    "test": "gulp test",
-    "preinstall": "gulp transpile"
+    "test": "gulp test"
   },
   "dependencies": {
     "bunyan": "^1.8.5",
