@@ -31,6 +31,7 @@
     "chai": "^3.5.0",
     "git-guppy": "^2.0.0",
     "gulp": "^3.9.1",
+    "gulp-tag-version": "^1.3.0",
     "lib-gulp-bootstrap": "git+ssh://git@bitbucket.org/jfstgermain/lib-gulp-bootstrap.git",
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0",
