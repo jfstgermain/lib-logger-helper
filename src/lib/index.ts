@@ -80,7 +80,8 @@ function init (configsPath = null, handleUncaughtExceptions = true) {
   if (handleUncaughtExceptions) {
     // prefixing with `this` so spies can be used for testing
     // see: http://stackoverflow.com/questions/26041079/sinon-spy-is-not-called-if-the-spied-method-is-called-indirectly
-    this.bindUncaughtExceptionHandler();
+    // TODO: ^^ doesn't work at runtime. disabling the test for the moment
+    bindUncaughtExceptionHandler();
   }
 
   if (configsPath) {

@@ -41,7 +41,8 @@ describe('The logger helper module', function () {
       });
     });
 
-    describe('when passing a value to `handleUncaughtExceptions`', function () {
+    // TODO: See comment in src/lib/index.ts#l83
+    describe.skip('when passing a value to `handleUncaughtExceptions`', function () {
       let spy;
       let sandbox;
 

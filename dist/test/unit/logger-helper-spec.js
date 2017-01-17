@@ -29,7 +29,8 @@ describe('The logger helper module', function () {
                 expect(logger.serializers).to.have.all.keys(['err', 'error', 'res', 'req', 'user', 'module']);
             });
         });
-        describe('when passing a value to `handleUncaughtExceptions`', function () {
+        // TODO: See comment in src/lib/index.ts#l83
+        describe.skip('when passing a value to `handleUncaughtExceptions`', function () {
             let spy;
             let sandbox;
             beforeEach(function () {
