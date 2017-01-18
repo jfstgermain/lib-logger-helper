@@ -98,6 +98,7 @@ function init (configsPath = null, handleUncaughtExceptions = true) {
         user: userSerializer,
       },
       streams: [{
+        level: process.env.NODE_ENV === 'development' ? 'debug' : 'info',
         stream: process.stdout,
       }],
     };

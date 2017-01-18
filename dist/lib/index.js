@@ -90,6 +90,7 @@ function init(configsPath = null, handleUncaughtExceptions = true) {
                 user: userSerializer,
             },
             streams: [{
+                    level: process.env.NODE_ENV === 'development' ? 'debug' : 'info',
                     stream: process.stdout,
                 }],
         };
@@ -113,5 +114,4 @@ exports.default = {
         user: userSerializer,
     },
 };
-
 //# sourceMappingURL=index.js.map
