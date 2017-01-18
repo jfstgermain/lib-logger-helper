@@ -114,4 +114,5 @@ exports.default = {
         user: userSerializer,
     },
 };
+
 //# sourceMappingURL=index.js.map
