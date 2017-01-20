@@ -109,9 +109,9 @@ function init (configsPath = null, handleUncaughtExceptions = true) {
   defaultLogger = bunyan.createLogger(configs);
 }
 
-function logger () {
+function logger (configsPath = null, handleUncaughtExceptions = true) {
   if (defaultLogger == null) {
-    init();
+    init(configsPath, handleUncaughtExceptions);
   }
 
   return defaultLogger;
