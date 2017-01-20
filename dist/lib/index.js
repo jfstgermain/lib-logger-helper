@@ -8,6 +8,14 @@ const _ = require("lodash");
 let defaultLogger = null;
 let uncaughtExceptionHandlerBound = false;
 let config = null;
+const serializers = {
+    err: bunyan.stdSerializers.err,
+    error: bunyan.stdSerializers.err,
+    module: moduleSerializer,
+    req: reqSerializer,
+    res: bunyan.stdSerializers.req,
+    user: userSerializer,
+};
 function bindUncaughtExceptionHandler() {
     if (!uncaughtExceptionHandlerBound) {
         uncaughtExceptionHandlerBound = true;
@@ -81,14 +89,7 @@ function init(configsPath = null, handleUncaughtExceptions = true) {
     else {
         configs = {
             name: 'default-logger',
-            serializers: {
-                err: bunyan.stdSerializers.err,
-                error: bunyan.stdSerializers.err,
-                module: moduleSerializer,
-                req: reqSerializer,
-                res: bunyan.stdSerializers.req,
-                user: userSerializer,
-            },
+            serializers,
             streams: [{
                     level: process.env.NODE_ENV === 'development' ? 'debug' : 'info',
                     stream: process.stdout,
@@ -108,11 +109,7 @@ exports.default = {
     init,
     logger,
     bindUncaughtExceptionHandler,
-    serializers: {
-        module: moduleSerializer,
-        req: reqSerializer,
-        user: userSerializer,
-    },
+    serializers,
 };
 
 //# sourceMappingURL=index.js.map
