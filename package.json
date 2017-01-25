@@ -11,7 +11,7 @@
   "main": "dist/lib/index.js",
   "scripts": {
     "test": "gulp test",
-    "postinstall": "tsc"
+    "postinstall": "tsc -p ."
   },
   "dependencies": {
     "bunyan": "^1.8.5",
