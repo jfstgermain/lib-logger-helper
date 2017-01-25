@@ -111,5 +111,4 @@ exports.default = {
     bindUncaughtExceptionHandler,
     serializers,
 };
-
 //# sourceMappingURL=index.js.map

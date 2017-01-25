@@ -147,5 +147,4 @@ describe('The logger helper module', function () {
         });
     });
 });
-
 //# sourceMappingURL=logger-helper-spec.js.map

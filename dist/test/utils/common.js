@@ -6,5 +6,4 @@ const Promise = require("bluebird");
 global['chai'] = chai;
 global['expect'] = global['chai'].expect;
 global['Promise'] = Promise;
-
 //# sourceMappingURL=common.js.map
