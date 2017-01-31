@@ -11,7 +11,7 @@
   "main": "dist/lib/index.js",
   "scripts": {
     "test": "gulp test",
-    "preinstall": "npm install",
+    "preinstall": "npm install typescript @types/node",
     "postinstall": "node ./node_modules/typescript/bin/tsc --p ."
   },
   "dependencies": {
