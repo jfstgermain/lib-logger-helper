@@ -3,7 +3,7 @@ how to use the logger.
 
 
 
-```
+```javascript
 import loggerHelper from 'lib-logger-helper';
 
 let logger;
