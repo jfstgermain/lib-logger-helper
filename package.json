@@ -11,7 +11,7 @@
   "main": "dist/lib/index.js",
   "scripts": {
     "test": "gulp test",
-    "postinstall": "ls ./node_modules/"
+    "postinstall": "ls"
   },
   "dependencies": {
     "bunyan": "^1.8.5",
