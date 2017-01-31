@@ -1,5 +1,6 @@
 See bunyan https://github.com/trentm/node-bunyan for more details on
 how to use the logger.
+
 The LoggerHelper provides you with a [few basic object serializers](https://bitbucket.org/jfstgermain/lib-logger-helper/src/master/src/lib/index.ts?at=master&fileviewer=file-view-default#index.ts-43)
 
 
