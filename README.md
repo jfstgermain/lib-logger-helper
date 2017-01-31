@@ -1,6 +1,9 @@
 See bunyan https://github.com/trentm/node-bunyan for more details on
 how to use the logger.
 
+
+
+```
 import loggerHelper from 'lib-logger-helper';
 
 let logger;
@@ -13,3 +16,4 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   logger = loggerHelper.logger();
 }
+```
