@@ -1,6 +1,6 @@
 See bunyan https://github.com/trentm/node-bunyan for more details on
 how to use the logger.
-
+The LoggerHelper provides you with a [few basic object serializers](https://bitbucket.org/jfstgermain/lib-logger-helper/src/master/src/lib/index.ts?at=master&fileviewer=file-view-default#index.ts-43)
 
 
 ```javascript
@@ -16,4 +16,6 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   logger = loggerHelper.logger();
 }
+
+logger.debug({a_field: "a value"}, "Some message, always as a second param");
 ```
