@@ -11,7 +11,7 @@
   "main": "dist/lib/index.js",
   "scripts": {
     "test": "gulp test",
-    "postinstall": "npm install typescript && node ./node_modules/typescript/bin/tsc"
+    "postinstall": "npm install typescript && node ./node_modules/typescript/bin/tsc --p ."
   },
   "dependencies": {
     "bunyan": "^1.8.5",
