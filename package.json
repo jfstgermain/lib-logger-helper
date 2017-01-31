@@ -11,7 +11,6 @@
   "main": "dist/lib/index.js",
   "scripts": {
     "test": "gulp test",
-    "preinstall": "npm install typescript @types/node",
     "postinstall": "node ./node_modules/typescript/bin/tsc --p ."
   },
   "dependencies": {
@@ -19,9 +18,7 @@
     "bunyan-config": "^0.2.0",
     "lodash": "^4.17.4",
     "run-sequence": "^1.2.2",
-    "typescript": "^2.1.5"
-  },
-  "devDependencies": {
+    "typescript": "^2.1.5",
     "@types/bluebird": "^3.0.37",
     "@types/bunyan": "0.0.34",
     "@types/bunyan-config": "^0.2.1",
@@ -29,7 +26,9 @@
     "@types/lodash": "^4.14.48",
     "@types/mocha": "^2.2.36",
     "@types/node": "^6.0.59",
-    "@types/sinon": "^1.16.34",
+    "@types/sinon": "^1.16.34"
+  },
+  "devDependencies": {
     "bunyan-config": "^0.2.0",
     "chai": "^3.5.0",
     "git-guppy": "^2.0.0",
